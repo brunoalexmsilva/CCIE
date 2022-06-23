@@ -4,7 +4,64 @@
 1. Managing MAC address table
 >Adds a static address to the MAC address table.
 > 
->***mac address-table static*** ___mac-addr___ ***vlan*** ___vlan-id___ ***interface*** ___interface-id___ 
+>**mac address-table static** *mac-addr* **vlan** *vlan-id* **interface** *interface-id*
+
+>Enables unicast MAC address filtering and configure the device to drop a packet with the specified source or destination unicast static address.
+>
+>**mac address-table static** *mac-addr* **vlan** *vlan-id* **drop** 
+
+>Sets the length of time that a dynamic entry remains in the MAC address table after the entry is used or updated. Default is 300 secs
+>
+>**mac address-table aging-time** *[0 | 10-1000000] [routed-mac | **vlan** vlan-id]*
+
+>### Troubleshooting Commands
+>
+>**clear mac address-table dynamic**
+> - Removes all dynamic entries. 
+>
+>**clear mac address-table dynamic address mac-address**
+>- Removes a specific MAC address.
+>
+>**clear mac address-table dynamic interface interface-id** 
+>- Removes all addresses on the specified physical port or port channel.
+>
+>**clear mac address-table dynamic vlan vlan-id** 
+>- Removes all addresses on a specified VLAN.
+>
+>**show mac address-table address mac-address** 
+> - Displays MAC address table information for the specified MAC address.
+>
+>**show mac address-table aging-time**
+>- Displays the aging time in all VLANs or the specified VLAN.
+>
+>**show mac address-table count**
+>- Displays the number of addresses present in all VLANs or the specified VLAN.
+>
+>**show mac address-table dynamic**
+>- Displays only dynamic MAC address table entries.
+>
+>**show mac address-table interface interface-name**
+>- Displays the MAC address table information for the specified interface.
+>
+>**show mac address-table move update**
+>- Displays the MAC address table move update information.
+>
+>**show mac address-table multicast**
+>- Displays a list of multicast MAC addresses.
+>
+>**show mac address-table notification {change | mac-move | threshold}**
+>- Displays the MAC notification parameters and history table.
+>
+>**show mac address-table secure**
+>- Displays the secure MAC addresses.
+>
+>**show mac address-table static** 
+>- Displays only static MAC address table entries.
+>
+>**show mac address-table vlan vlan-id** 
+>- Displays the MAC address table information for the specified VLAN.
+
+
 
 2. Errdisable recovery
 3. L2 MTU 
