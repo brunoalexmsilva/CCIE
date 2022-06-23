@@ -2,6 +2,10 @@
 ## Switched campus
 ### Switch administration
 1. Managing MAC address table
+>Adds a static address to the MAC address table.
+> 
+>***mac address-table static*** ___mac-addr___ ***vlan*** ___vlan-id___ ***interface*** ___interface-id___ 
+
 2. Errdisable recovery
 3. L2 MTU 
 ### Layer 2 protocols
