@@ -16,54 +16,55 @@
 
 >### Troubleshooting Commands
 >
->**clear mac address-table dynamic**
-> - Removes all dynamic entries. 
+>**clear mac address-table ?**
+> - Removes MAC address table entries. 
 >
->**clear mac address-table dynamic address mac-address**
->- Removes a specific MAC address.
->
->**clear mac address-table dynamic interface interface-id** 
->- Removes all addresses on the specified physical port or port channel.
->
->**clear mac address-table dynamic vlan vlan-id** 
->- Removes all addresses on a specified VLAN.
->
->**show mac address-table address mac-address** 
-> - Displays MAC address table information for the specified MAC address.
->
->**show mac address-table aging-time**
->- Displays the aging time in all VLANs or the specified VLAN.
->
->**show mac address-table count**
->- Displays the number of addresses present in all VLANs or the specified VLAN.
->
->**show mac address-table dynamic**
->- Displays only dynamic MAC address table entries.
->
->**show mac address-table interface interface-name**
->- Displays the MAC address table information for the specified interface.
->
->**show mac address-table move update**
->- Displays the MAC address table move update information.
->
->**show mac address-table multicast**
->- Displays a list of multicast MAC addresses.
->
->**show mac address-table notification {change | mac-move | threshold}**
->- Displays the MAC notification parameters and history table.
->
->**show mac address-table secure**
->- Displays the secure MAC addresses.
->
->**show mac address-table static** 
->- Displays only static MAC address table entries.
->
->**show mac address-table vlan vlan-id** 
->- Displays the MAC address table information for the specified VLAN.
-
+>**show mac address-table ?** 
+> - Displays MAC address table information.
 
 
 2. Errdisable recovery
+- Reasons for interface err-disable
+    - Duplex mismatch
+    - Port channel misconfiguration
+    - BPDU guard violation
+    - UniDirectional Link Detection (UDLD) condition
+    - Late-collision detection
+    - Link-flap detection
+    - Security violation
+    - Port Aggregation Protocol (PAgP) flap
+    - Layer 2 Tunneling Protocol (L2TP) guard
+    - DHCP snooping rate-limit
+    - Incorrect GBIC / Small Form-Factor Pluggable (SFP) module or cable
+    - Address Resolution Protocol (ARP) inspection
+    - Inline power
+
+>**show interface status**
+> - Verify interface status for err-disable
+>
+>**no errdisable detect**
+> - Verify if errdisable is enable/disable for each err-disable reason and the mode in which it is enabled
+>
+>**(config)# no errdisable detect** *cause*
+> - Disable error-disable detection. Error-disable detection is enabled for all of these reasons by default.
+>
+>**show errdisable recovery**
+> - Verify if errdisable recovery is enable/disable for each err-disable reason. Err-Disable recovery is disable by default.
+>
+>**(config)# errdisable recovery cause** *cause*
+> - Activate err-disable for a particular reason
+>
+>**(config)# errdisable recovery interval** *seconds*
+> - Configure the recovery interval
+
+Troubleshoot
+
+> **show interfaces status err-disabled** 
+>
+> - Shows which local ports are involved in the errdisabled state.
+
+
+
 3. L2 MTU 
 ### Layer 2 protocols
 1. CDP, LLDP
