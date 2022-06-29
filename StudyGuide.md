@@ -63,9 +63,21 @@ Troubleshoot
 >
 > - Shows which local ports are involved in the errdisabled state.
 
+3. L2 MTU
+>**system mtu jumbo** *size* 
+>
+> - To increase the ethernet mtu for 1Gbps and 10Gbps interfaces on a Catalyst L3 switch
+>
+>**system mtu** *size*
+> - To increase it for 10 and 100Mbps interfaces use 
+>
+>**system mtu routing** *size*
+> - To increase the IP MTU for routing, sourcing and replying to traffic 
+>
+>**show system mtu**
+> - Verify MTU on a catalyst L3 switch? 
 
 
-3. L2 MTU 
 ### Layer 2 protocols
 1. CDP, LLDP
 2. UDLD
