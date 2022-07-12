@@ -111,7 +111,11 @@ Verification Commands
 >
 >**show lldp neighbors detail** 
 >- It will show more verbose output, including the IP addresses configured on those devices.
+
 2. UDLD
+
+Modes of Operation
+ - UDLD supports two modes of operation: normal (the default) and aggressive. In normal mode, UDLD can detect unidirectional links due to misconnected ports on fiber-optic connections. In aggressive mode, UDLD can also detect unidirectional links due to one-way traffic on fiber-optic and twisted-pair links and to misconnected ports on fiber-optic links.
 
 Enabling UDLD Globally
 >**udld {aggressive | enable | messagetime** *message-timer-interval* **}**
