@@ -80,7 +80,39 @@ Troubleshoot
 
 ### Layer 2 protocols
 1. CDP, LLDP
+>**no cdp run**
+> - CDP is enabled by default use no to deactive glabally
+>
+>**no cdp enable**
+> - Disable cdp per interface.
+
+Verification Commands
+>**show cdp** 
+> - It shows if CDP is enabled or not, also the timers, etc.
+>
+>**show cdp neighbors** 
+> - It is used to verify the attached devices. It will give you a nice brief summary view.
+>
+>**show cdp neighbors detail**
+> - It is used to verify the attached devices. It will give more detail, including the IP addresses of the neighbors.
 2. UDLD
+>**(no) lldp run**
+> - LLDP is not enabled by default.
+>
+>**no lldp transmit** and **no lldp receive**
+> - To disable it at the interface level, we do it for both transmit and receive separately. 
+
+Verification Commands
+>**show lldp**
+> - It will show if LLDP is enabled or not.
+>
+>**show lldp neighbors**
+> - It will show a summary of our neighbors.
+>
+>**show lldp neighbors detail** 
+>- It will show more verbose output, including the IP addresses configured on those devices.
+
+
 ### VLAN technologies
 1. Access ports
 2. Trunk ports (802.1Q)
