@@ -95,7 +95,7 @@ Verification Commands
 >
 >**show cdp neighbors detail**
 > - It is used to verify the attached devices. It will give more detail, including the IP addresses of the neighbors.
-2. UDLD
+
 >**(no) lldp run**
 > - LLDP is not enabled by default.
 >
@@ -111,7 +111,30 @@ Verification Commands
 >
 >**show lldp neighbors detail** 
 >- It will show more verbose output, including the IP addresses configured on those devices.
+2. UDLD
 
+Enabling UDLD Globally
+>**udld {aggressive | enable | messagetime** *message-timer-interval* **}**
+> - **aggressive** - Enables UDLD in aggressive mode on all fiber-optic ports.
+> - **enable** - Enables UDLD in normal mode on all fiber-optic ports on the switch. UDLD is disabled by default. An individual interface configuration overrides the setting of the udld enable global configuration command.
+> - **message time message-timer-interval** - Configures the period of time between UDLD probe messages on ports that are in the advertisement phase and are detected to be bidirectional. The range is from 1 to 90 seconds; the default value is 15.
+
+Enabling UDLD on an Interface
+>**udld port [aggressive]**
+> - **udld port** - Enables UDLD in normal mode on the specified port.
+> - **udld port aggressive** - Enables UDLD in aggressive mode on the specified port.
+> - **no udld port** interface configuration command to disable UDLD on a specified fiber-optic port.
+
+Resetting an Interface Disabled by UDLD
+>**udld reset** - Reset all ports disabled by UDLD
+> or using one of the following methods
+> - **shutdown** and **no shutdown** interface configuration
+> - **no udld {aggressive | enable}** global configuration command followed by the **udld {aggressive | enable}**
+> - **no udld** port interface configuration command followed by the **udld port [aggressive]**
+> - **errdisable recovery cause udld** global configuration command enables the timer to automatically recover from the UDLD error-disabled state
+
+Displaying UDLD Status
+>**show udld [** *interface-id* **]** - To display the UDLD status for the specified port or for all ports
 
 ### VLAN technologies
 1. Access ports
